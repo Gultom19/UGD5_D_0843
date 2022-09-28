@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
 {
-Schema::create('pegawai', function (Blueprint $table) {
-$table->string('nomor_induk_pegawai');
-$table->string('nama_pegawai');
-$table->id('id_departemen');
-$table->string('email');
-$table->integer('telepon');
-$table->boolean('gender');
-$table->boolean('status');
-$table->timestamps();
+Schema::create('pegawais', function (Blueprint $table) {
+    $table->string('nomor_induk_pegawai');
+    $table->string('nama_pegawai');
+    $table->id('id_departemen');
+    $table->string('email');
+    $table->integer('telepon');
+    $table->boolean('gender');
+    $table->boolean('status');
+    $table->timestamps();
 });
 }
 
@@ -32,6 +32,6 @@ $table->timestamps();
      */
     public function down()
     {
-        Schema::dropIfExists('pegawai');
+        Schema::dropIfExists('pegawais');
     }
 };
