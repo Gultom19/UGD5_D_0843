@@ -4,13 +4,13 @@
 <div class="container-fluid">
 <div class="row mb-2">
 <div class="col-sm-6">
-<h1 class="m-0">Departemen</h1>
+<h1 class="m-0">Pegawai</h1>
 </div>
 <!-- /.col -->
 <div class="col-sm-6">
 <ol class="breadcrumb float-sm-right">
 <li class="breadcrumb-item">
-<a href="{{ url('departemen')}}">Departemen</a>
+<a href="{{ url('pegawai')}}">Pegawai</a>
 </li>
 <li class="breadcrumb-item active">Index</li>
 </ol>
@@ -33,49 +33,39 @@
 <table class="table table-hover textnowrap">
 <thead>
 <tr>
-<th class="text-center">Nama
-Departemen</th>
-<th class="text-center">Nama
-Manger</th>
-<th class="text-center">Jumlah
-Pegawai</th>
+<th class="text-center">NIIP</th>
+<th class="text-center">Nama Pegawai</th>
+<th class="text-center">Departemen</th>
+<th class="text-center">Email</th>
+<th class="text-center">Telepon</th>
+<th class="text-center">Gender</th>
+<th class="text-center">Status</th>
 </tr>
 </thead>
 <tbody>
-@forelse ($departemen as $item)
+@forelse ($pegawai as $item)
 <tr>
 <td class="text-center">{{
-$item->nama_departemen }}</td>
+$item->niip }}</td>
 <td class="text-center">{{
-$item->nama_manager }}</td>
+$item->nama_pegawai }}</td>
 <td class="text-center">{{
-$item->jumlah_pegawai }}</td>
+$item->departemen }}</td>
+<td class="text-center">{{
+$item->email}}</td>
+<td class="text-center">{{
+$item->telepon }}</td>
+<td class="text-center">{{
+$item->gender }}</td>
+<td class="text-center">{{
+$item->status }}</td>
 </tr>
 
 @empty
-<div>
+<div class="alert alert-danger">
+Data Pegawai belum tersedia
 </div>
 
-<tr>
-    <td> IT </td>
-    <td> Daniel Gultom </td>
-    <td> 10 </td>
-</tr>
-<tr>
-    <td> Sosial </td>
-    <td> Hesti </td>
-    <td> 15 </td>
-</tr>
-<tr>
-    <td> Kreatif </td>
-    <td> Marshanda </td>
-    <td> 18 </td>
-</tr>
-<tr>
-    <td> Hukum </td>
-    <td> Patricia </td>
-    <td> 19 </td>
-</tr>
 @endforelse
 </tbody>
 </table>
