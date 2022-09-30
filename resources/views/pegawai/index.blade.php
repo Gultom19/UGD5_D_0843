@@ -43,23 +43,25 @@
 </tr>
 </thead>
 <tbody>
-@forelse ($pegawai as $item)
+ @forelse ($data_pegawai as $item)
 <tr>
-<td class="text-center">{{
-$item->niip }}</td>
-<td class="text-center">{{
-$item->nama_pegawai }}</td>
-<td class="text-center">{{
-$item->departemen }}</td>
-<td class="text-center">{{
-$item->email}}</td>
-<td class="text-center">{{
-$item->telepon }}</td>
-<td class="text-center">{{
-$item->gender }}</td>
-<td class="text-center">{{
-$item->status }}</td>
-</tr>
+     <td class="text-center">{{ $item->nomor_induk_pegawai}}</td>
+     <td class="text-center">{{ $item->nama_pegawai }}</td>
+     <td class="text-center">{{ $item->departemen }}</td>
+     <td class="text-center">{{ $item->email }}</td>
+     <td class="text-center">{{ $item->telepon }}</td>
+     @if($item->gender==0)
+    <td>Wanita</td>
+     @else
+    <td>Pria</td>
+     @endif
+                                                
+     @if($item->status==0)
+    <td>Inactive</td>
+     @else
+    <td>Active</td>
+    @endif
+    </tr>
 
 @empty
 <div class="alert alert-danger">
