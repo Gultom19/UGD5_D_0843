@@ -13,8 +13,8 @@ class ProyekController extends Controller
 public function index()
 {
     //get posts
-$proyek = Proyek::get();
+$proyeks = Proyek::get();
 //render view with posts
-return view('proyek.index', compact('proyek'));
+return view('proyek.index', compact('proyeks'));
 }
 }

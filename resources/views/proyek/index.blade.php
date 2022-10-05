@@ -42,7 +42,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($data_proyek as $item)
+                                    @forelse ($proyeks as $item)
                                             <tr>
                                                 <td class="text-center">{{ $item->nama_proyek }}</td>
                                                 <td class="text-center">{{ $item->nama_departemen }}</td>
@@ -72,8 +72,8 @@
             <!-- /.row -->
         </div>
         <!-- /.container-fluid -->
-        <div class="d-flex justify-content-center" > 
-            {{ $data_proyek->links() }}
         </div>
+<!-- /.container-fluid -->
+</div>
     </div>
 @endsection

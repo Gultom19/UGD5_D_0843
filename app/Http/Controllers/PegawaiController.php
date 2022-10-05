@@ -13,8 +13,8 @@ class PegawaiController extends Controller
 public function index()
 {
     //get posts
-$pegawai = Pegawai::get();
+$pegawais = Pegawai::get();
 //render view with posts
-return view('pegawai.index', compact('pegawai'));
+return view('pegawai.index', compact('pegawais'));
 }
 }

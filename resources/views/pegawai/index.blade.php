@@ -43,7 +43,7 @@
 </tr>
 </thead>
 <tbody>
- @forelse ($data_pegawai as $item)
+@forelse ($pegawais as $item)
 <tr>
      <td class="text-center">{{ $item->nomor_induk_pegawai}}</td>
      <td class="text-center">{{ $item->nama_pegawai }}</td>
