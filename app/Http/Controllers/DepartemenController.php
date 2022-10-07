@@ -64,4 +64,20 @@ return redirect()->route('departemen.index')->with(['success'
 => 'Data Berhasil Disimpan, namun gagal mengirim email!']);
 }
 }
+public function update(Request $request, $id)
+{
+    $request->validate(['nama_departemen'=>'required', ]);
+Departemen::find($id)->update($request->all());
+ return redirect()->route('departemen.index')->with('berhasil','Item Berhasil Update');
+    }
+public function edit($id)
+ {
+    $departemen=Departemen::find($id);
+return view('departemen.edit',compact('departemen'));
+}
+public function destroy($id)
+{
+ departemen::find($id)->delete();
+return redirect()->route('departemen.index')->with('berhasil','Item Berhasil di Hapus');
+}
 }

@@ -17,6 +17,8 @@
 </div>
 <!-- /.col -->
 </div>
+<!-- /.col -->
+</div>
 <!-- /.row -->
 </div>
 <!-- /.container-fluid -->
@@ -29,6 +31,8 @@
 <div class="col-12">
 <div class="card">
 <div class="card-body">
+<a href="{{ route('pegawai.create') }}"
+class="btn btn-md btn-success mb-3">TAMBAH Pegawai</a>
 <div class="table-responsive p-0">
 <table class="table table-hover textnowrap">
 <thead>
@@ -62,6 +66,19 @@
     <td>Active</td>
     @endif
     </tr>
+    <td class="text-center">
+<form onsubmit="return
+confirm('Apakah Anda Yakin ?');" action="{{ route('pegawai.destroy',
+$item->id) }}" method="POST">
+<a href="{{
+route('pegawai.edit', $item->id) }}" class="btn btn-sm btnprimary">EDIT</a>
+@csrf
+@method('DELETE')
+<button type="submit"
+class="btn btn-sm btn-danger">Hapus</button>
+</form>
+</td>
+</tr>
 
 @empty
 <div class="alert alert-danger">
@@ -72,6 +89,7 @@ Data Pegawai belum tersedia
 </tbody>
 </table>
 </div>
+<div class="d-flex justify-contentcenter">{{$departemen->links()}}</div>
 </div>
 <!-- /.card-body -->
 </div>
