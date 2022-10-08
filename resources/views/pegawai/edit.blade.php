@@ -38,7 +38,7 @@
                                     <div class="form-group col-md-12">
 
                                     <label class="font-weightbold">Nama Pegawai</label>
-                                        <input type="text" class="form-control @error('nama_pegawai') is-invalid @enderror" name="nama_pegawai" value="{{ old('nama_pegawai') }}" placeholder="Masukkan Nama Pegawai">
+                                    <input type="text" class="form-control @error('nama_pegawai') is-invalid @enderror" name="nama_pegawai" value="{{ old('nama_pegawai') }}" placeholder="Masukkan Nama Pegawai" maxlength="15">
                                         @error('nama_pegawai')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -50,7 +50,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                     <label class="font-weightbold">telepon</label>
-                                        <input type="number" class="form-control @error('telepon') is-invalid @enderror" name="telepon" value="{{ old('nama_departemen') }}" placeholder="Masukkan Telepon">
+                                    <input type="telepon" class="form-control @error('telepon') is-invalid @enderror" name="telepon" value="{{ old('telepon') }}" placeholder="Masukkan Telepon" pattern="[0][8][0-9]{4,5}">
                                         @error('Telepon')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -66,6 +66,7 @@
                                             {{ $message }}
                                         </div>
                                         @enderror
+                                        
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12 mt-5 text-center">

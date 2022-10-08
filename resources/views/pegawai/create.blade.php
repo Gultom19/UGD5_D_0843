@@ -35,9 +35,7 @@ method="POST" enctype="multipart/form-data">
 <div class="form-row">
 <div class="form-group col-md-12">
 <label class="font-weightbold">Nama Pegawai</label>
-<input type="text" class="formcontrol @error('nama_pegawai') is-invalid @enderror"
-name="nama_pegawai" value="{{ old('nama_pegawai') }}"
-placeholder="Masukkan Nama Pegawai">
+<input type="text" class="form-control @error('nama_pegawai') is-invalid @enderror" name="nama_pegawai" value="{{ old('nama_pegawai') }}" placeholder="Masukkan Nama Pegawai" maxlength="15">
 @error('nama_pegawai')
 <div class="invalid-feedback">
 {{ $message }}
@@ -48,9 +46,9 @@ placeholder="Masukkan Nama Pegawai">
 <div class="form-row">
 <div class="form-group col-md-6">
 <label class="font-weightbold">Nama Pegawai</label>
-<input type="text" class="formcontrol @error('nama_pegawai') is-invalid @enderror" name="nama_pegawai"
-value="{{ old('nama_pegawai') }}" placeholder="Masukkan Nama Pegawai">
-@error('nama_pegawai')
+<input type="telepon" class="form-control @error('telepon') is-invalid @enderror" name="telepon" value="{{ old('telepon') }}" placeholder="Masukkan Telepon" pattern="[0][8][0-9]{4,5}">
+value="{{ old('telepon') }}" placeholder="telepon">
+@error('Telepon')
 <div class="invalid-feedback">
 {{ $message }}
 </div>
@@ -58,7 +56,7 @@ value="{{ old('nama_pegawai') }}" placeholder="Masukkan Nama Pegawai">
 </div>
 <div class="form-group col-md-6">
 <label class="font-weightbold">Email</label>
-<input type="text" class="formcontrol @error('email') is-invalid @enderror"
+<input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Masukkan Email">
 name="email" value="{{ old('email') }}"
 placeholder="Masukkan Email">
 @error('Email')
